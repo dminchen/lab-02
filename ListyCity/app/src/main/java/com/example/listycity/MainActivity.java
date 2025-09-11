@@ -48,10 +48,8 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Selected: " + dataList.get(position), Toast.LENGTH_SHORT).show();
         });
 
-        // ADD CITY
         addBtn.setOnClickListener(v -> showAddCityDialog());
 
-        // DELETE CITY (removes currently selected item)
         deleteBtn.setOnClickListener(v -> deleteSelectedCity());
     }
 
@@ -67,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                 .setPositiveButton("CONFIRM", (dialog, which) -> {
                     String name = input.getText().toString().trim();
                     if (TextUtils.isEmpty(name)) {
-                        Toast.makeText(this, "City name cannot be empty.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "City name cannot be empty", Toast.LENGTH_SHORT).show();
                         return;
                     }
                     dataList.add(name);
@@ -80,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void deleteSelectedCity() {
         if (selectedPosition < 0 || selectedPosition >= dataList.size()) {
-            Toast.makeText(this, "Tap a city first, then press DELETE CITY.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Tap a city first, then press DELETE CITY", Toast.LENGTH_SHORT).show();
             return;
         }
         String removed = dataList.remove(selectedPosition);
